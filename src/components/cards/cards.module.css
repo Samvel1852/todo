@@ -1,0 +1,19 @@
+.Cards {
+    width: 90%;
+    height: 70vh;
+    margin: auto;
+    border:  1px solid black;
+    border-radius: 15px;
+    box-shadow: 5px 5px 10px black;
+}
+
+.Wrapper {
+    width: 90%;
+    height:  100%;
+    margin: auto;
+    /*border: 1px solid black;*/
+    display:  flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    overflow-y: scroll;
+}

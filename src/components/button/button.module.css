@@ -1,0 +1,30 @@
+.Edit {
+  background-color: yellow;
+  border: 0;
+  padding: 5px;
+}
+
+.Delete {
+  background-color: red;
+  border: 0;
+  padding: 5px;
+}
+
+.Add {
+  background-color: green;
+  border: 0;
+  padding: 5px;
+}
+
+.Save {
+  background-color: lightgreen;
+  border: 0;
+  padding: 5px;
+}
+
+.Add:hover,
+.Edit:hover,
+.Delete:hover,
+.Save:hover {
+  cursor: pointer;
+}

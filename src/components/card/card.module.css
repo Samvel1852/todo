@@ -1,0 +1,44 @@
+.Card {
+  border: 1px solid blue;
+  height: 200px;
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px black;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.Wrapper {
+  width: 90%;
+  margin: auto;
+  height: 80%;
+  border: 1px solid black;
+  box-sizing: border-box;
+  word-wrap: break-word;
+  overflow-y: scroll;
+}
+
+.Wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.Wrapper p {
+  font-style: italic;
+  font-weight: bold;
+}
+
+.Text {
+  width: 90%;
+  height: 80%;
+  outline: none;
+  border: 0;
+  cursor: pointer;
+  overflow-y: scroll;
+  word-wrap: break-word;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.Text::-webkit-scrollbar {
+  display: none;
+}
