@@ -17,7 +17,7 @@ const Card = ({
         className={styles.Text}
         readOnly={editing}
         defaultValue={description}
-        onChange={(e) => onInputChange(e, taskId)}
+        onChange={(e) => onInputChange(e)}
       />
 
       {editing ? (
