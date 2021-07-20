@@ -21,12 +21,14 @@ class Todo extends Component {
     newLists.push(newTodo);
     this.setState({ lists: newLists });
   };
+
   handleEditCard = (cardId) => {
     const newLists = [...this.state.lists];
     let currentCard = newLists.find((item) => item.id === cardId);
     currentCard.editing = !currentCard.editing;
     this.setState({ lists: newLists });
   };
+
   render() {
     return (
       <>
