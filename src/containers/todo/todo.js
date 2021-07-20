@@ -9,6 +9,7 @@ class Todo extends Component {
   state = {
     lists: [],
     currentCardValue: "",
+    mainInputValue: "",
   };
 
   createTodo = () => {
@@ -40,11 +41,18 @@ class Todo extends Component {
     this.setState({ lists: newFilteredList });
   };
 
+  handleMainInputValue = (e) => {
+    this.setState({ mainInputValue: e.target.value });
+  };
+
   render() {
     return (
       <>
         <div className={styles.AddTodoDiv}>
-          <Input type="addTodo" />
+          <Input
+            handleMainInputValue={this.handleMainInputValue}
+            type="addTodo"
+          />
           <Button onClickHandler={this.createTodo} type="Add" />
         </div>
         <Cards
@@ -53,6 +61,7 @@ class Todo extends Component {
           tasks={this.state.lists}
           editingHandler={this.editingHandler}
           handleEditCard={this.handleEditCard}
+          currentCardValue={this.state.mainInputValue}
         />
         )
       </>

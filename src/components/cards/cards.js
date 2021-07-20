@@ -8,6 +8,8 @@ const Cards = ({
   handleEditCard,
   handleCardInputChange,
   handleDeleteCard,
+  currentCardValue,
+  handleMainInputValue,
 }) => {
   return (
     <div className={styles.Cards}>
@@ -23,6 +25,7 @@ const Cards = ({
               taskId={item.id}
               handleEditCard={handleEditCard}
               handleCardInputChange={handleCardInputChange}
+              currentCardValue={currentCardValue}
             />
           );
         })}
