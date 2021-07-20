@@ -14,7 +14,7 @@ const getStyles = (type) => {
   }
 };
 
-function Button({ type, onClickHandler, isHidden, editing }) {
+function Button({ type, onClickHandler, isHidden }) {
   return (
     <button
       hidden={isHidden}

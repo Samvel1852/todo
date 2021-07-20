@@ -6,9 +6,10 @@ import styles from "./card.module.css";
 const Card = ({
   description,
   editing,
-  onInputChange,
   taskId,
   handleEditCard,
+  handleCardInputChange,
+  handleDeleteCard,
 }) => {
   return (
     <div className={styles.Card}>
@@ -17,7 +18,8 @@ const Card = ({
         className={styles.Text}
         readOnly={editing}
         defaultValue={description}
-        onChange={(e) => onInputChange(e)}
+        onChange={(e) => handleCardInputChange(e)}
+        autoFocus
       />
 
       {editing ? (
@@ -29,7 +31,7 @@ const Card = ({
       ) : (
         <Button type="Save" onClickHandler={() => handleEditCard(taskId)} />
       )}
-      <Button type="Delete" />
+      <Button onClickHandler={() => handleDeleteCard(taskId)} type="Delete" />
     </div>
   );
 };

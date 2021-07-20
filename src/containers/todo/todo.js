@@ -8,6 +8,7 @@ class Todo extends Component {
   static id = 3;
   state = {
     lists: [],
+    currentCardValue: "",
   };
 
   createTodo = () => {
@@ -29,6 +30,16 @@ class Todo extends Component {
     this.setState({ lists: newLists });
   };
 
+  handleCardInputChange = (e) => {
+    this.setState({ currentCardValue: e.target.value });
+  };
+
+  handleDeleteCard = (cardId) => {
+    const newList = [...this.state.lists];
+    const newFilteredList = newList.filter((item) => item.id !== cardId);
+    this.setState({ lists: newFilteredList });
+  };
+
   render() {
     return (
       <>
@@ -37,6 +48,8 @@ class Todo extends Component {
           <Button onClickHandler={this.createTodo} type="Add" />
         </div>
         <Cards
+          handleDeleteCard={this.handleDeleteCard}
+          handleCardInputChange={this.handleCardInputChange}
           tasks={this.state.lists}
           editingHandler={this.editingHandler}
           handleEditCard={this.handleEditCard}
