@@ -1,15 +1,17 @@
 import React from "react";
-import styles from "./card.module.css";
 import Button from "../../components/button/button";
+import Input from "../../components/input/input";
+import styles from "./card.module.css";
 
-const Card = ({ description, editing, onInputChange, taskId }) => {
+const Card = ({
+  description,
+  editing,
+  onInputChange,
+  taskId,
+  handleEditCard,
+}) => {
   return (
     <div className={styles.Card}>
-      {/*<div className={styles.Wrapper}>
-                    <p>
-                        {description}
-                    </p>
-                </div>*/}
       <textarea
         type="textarea"
         className={styles.Text}
@@ -17,9 +19,17 @@ const Card = ({ description, editing, onInputChange, taskId }) => {
         defaultValue={description}
         onChange={(e) => onInputChange(e, taskId)}
       />
-      <Button type="Edit" />
+
+      {editing ? (
+        <Button
+          // editing={editing}
+          onClickHandler={() => handleEditCard(taskId)}
+          type="Edit"
+        />
+      ) : (
+        <Button type="Save" onClickHandler={() => handleEditCard(taskId)} />
+      )}
       <Button type="Delete" />
-      <Button type="Save" />
     </div>
   );
 };

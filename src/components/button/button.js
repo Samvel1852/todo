@@ -1,7 +1,7 @@
 import styles from "./button.module.css";
 import Icon from "../../helpers/Icon";
 
-function Button({ type }) {
+function Button({ type, onClickHandler, isHidden, editing }) {
   const getStyles = (type) => {
     switch (type) {
       case "Edit":
@@ -16,7 +16,11 @@ function Button({ type }) {
   };
 
   return (
-    <button className={getStyles(type)}>
+    <button
+      hidden={isHidden}
+      onClick={onClickHandler}
+      className={getStyles(type)}
+    >
       <Icon type={type} />
     </button>
   );

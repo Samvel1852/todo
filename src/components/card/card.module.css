@@ -1,6 +1,7 @@
 .Card {
   border: 1px solid blue;
   height: 200px;
+  width: 300px;
   border-radius: 10px;
   box-shadow: 5px 5px 10px black;
   text-align: center;
