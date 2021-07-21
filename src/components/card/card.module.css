@@ -6,6 +6,7 @@
   box-shadow: 5px 5px 10px black;
   text-align: center;
   box-sizing: border-box;
+  margin: 10px;
 }
 
 .DoneCard {
@@ -16,6 +17,7 @@
   box-shadow: 5px 5px 10px black;
   text-align: center;
   box-sizing: border-box;
+  margin: 10px;
 }
 
 .Wrapper {

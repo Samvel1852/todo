@@ -39,7 +39,7 @@ class Todo extends Component {
   handleDeleteCard = (cardId) => {
     const newList = [...this.state.lists];
     const newFilteredList = newList.filter((item) => item.id !== cardId);
-    this.setState({ lists: newFilteredList });
+    this.setState({ lists: newFilteredList, mainList: newFilteredList });
   };
 
   handleMainInputValue = (e) => {
