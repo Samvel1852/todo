@@ -45,6 +45,13 @@ class Todo extends Component {
     this.setState({ mainInputValue: e.target.value });
   };
 
+  handleActiveDoneToggle = (cardId) => {
+    const newLists = [...this.state.lists];
+    let currentCard = newLists.find((item) => item.id === cardId);
+    currentCard.done = !currentCard.done;
+    this.setState({ lists: newLists });
+  };
+
   render() {
     return (
       <>
@@ -62,6 +69,7 @@ class Todo extends Component {
           editingHandler={this.editingHandler}
           handleEditCard={this.handleEditCard}
           currentCardValue={this.state.mainInputValue}
+          handleActiveDoneToggle={this.handleActiveDoneToggle}
         />
         )
       </>
