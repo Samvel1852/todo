@@ -15,7 +15,6 @@ const Card = ({
 }) => {
   return (
     <div className={done ? styles.DoneCard : styles.Card}>
-      {console.log(taskId)}
       <textarea
         onClick={() => handleActiveDoneToggle(taskId)}
         type="textarea"

@@ -5,3 +5,8 @@
   align-items: center;
   margin: 10px;
 }
+
+.AllActiveCompletedBtnsDiv {
+  display: flex;
+  justify-content: center;
+}

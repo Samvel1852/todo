@@ -7,6 +7,7 @@ import styles from "./todo.module.css";
 class Todo extends Component {
   static id = 3;
   state = {
+    mainList: [],
     lists: [],
     currentCardValue: "",
     mainInputValue: "",
@@ -21,7 +22,7 @@ class Todo extends Component {
       editing: true,
     };
     newLists.push(newTodo);
-    this.setState({ lists: newLists });
+    this.setState({ lists: newLists, mainList: newLists });
   };
 
   handleEditCard = (cardId) => {
@@ -52,6 +53,24 @@ class Todo extends Component {
     this.setState({ lists: newLists });
   };
 
+  onlyActiveCards = () => {
+    this.setState({
+      lists: this.state.mainList.filter((card) => card.done === false),
+    });
+  };
+
+  allCards = () => {
+    this.setState({
+      lists: this.state.mainList,
+    });
+  };
+
+  onlyCompletedCards = () => {
+    this.setState({
+      lists: this.state.mainList.filter((card) => card.done === true),
+    });
+  };
+
   render() {
     return (
       <>
@@ -61,6 +80,11 @@ class Todo extends Component {
             type="addTodo"
           />
           <Button onClickHandler={this.createTodo} type="Add" />
+        </div>
+        <div className={styles.AllActiveCompletedBtnsDiv}>
+          <Button onClickHandler={this.allCards} type="All" />
+          <Button onClickHandler={this.onlyActiveCards} type="Active" />
+          <Button onClickHandler={this.onlyCompletedCards} type="Completed" />
         </div>
         <Cards
           handleDeleteCard={this.handleDeleteCard}
