@@ -19,3 +19,5 @@ On the each todo there is textarea tou represent the description, when you click
 All the data saved in localStorage to let you keep data after refresh or after close browser.
 
 You can use [this app](http://todo-samvel.herokuapp.com/). Hope you will enjoy to use it.
+
+Created with love by Vazgen and Samvel.
