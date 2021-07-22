@@ -6,22 +6,30 @@ import styles from "./todo.module.css";
 
 class Todo extends Component {
   static id = 3;
-  state = {
-    mainList: [],
-    lists: [],
-    currentCardValue: "",
-    mainInputValue: "",
-  };
+  state = localStorage.getItem("state")
+    ? JSON.parse(localStorage.getItem("state"))
+    : {
+        mainList: [],
+        lists: [],
+        currentCardValue: "",
+        mainInputValue: "",
+      };
+
+  componentDidUpdate() {
+    localStorage.setItem("state", JSON.stringify(this.state));
+  }
 
   createTodo = () => {
     const newLists = [...this.state.lists];
     let newTodo = {
-      description: "",
+      description: this.state.mainInputValue,
       id: Todo.id++,
       done: false,
       editing: true,
     };
+
     newLists.push(newTodo);
+
     // console.log(this.state.mainInputValue, this.state.currentCardValue);
     this.setState({
       lists: newLists,
@@ -29,13 +37,17 @@ class Todo extends Component {
       currentCardValue: this.state.mainInputValue,
       mainInputValue: "",
     });
+
+    // localStorage.setItem("lists", JSON.stringify(newLists));
+    // localStorage.setItem("mainList", JSON.stringify(newLists));
   };
 
   handleEditCard = (cardId) => {
     const newLists = [...this.state.lists];
     let currentCard = newLists.find((item) => item.id === cardId);
+    currentCard.description = this.state.currentCardValue;
     currentCard.editing = !currentCard.editing;
-    this.setState({ lists: newLists });
+    this.setState({ lists: newLists, mainList: newLists });
   };
 
   handleCardInputChange = (e) => {

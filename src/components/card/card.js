@@ -12,6 +12,7 @@ const Card = ({
   handleDeleteCard,
   currentCardValue,
   handleActiveDoneToggle,
+  description,
 }) => {
   return (
     <div className={done ? styles.DoneCard : styles.Card}>
@@ -20,7 +21,7 @@ const Card = ({
         type="textarea"
         className={styles.Text}
         readOnly={editing}
-        defaultValue={currentCardValue}
+        defaultValue={description}
         onChange={(e) => handleCardInputChange(e)}
       />
       {editing ? (
