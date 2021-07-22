@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import Button from "../../components/button/button";
 import Input from "../../components/input/input";
 import styles from "./card.module.css";
@@ -14,6 +14,7 @@ const Card = ({
   handleActiveDoneToggle,
   description,
 }) => {
+  const inputRef = useRef(null);
   return (
     <div className={done ? styles.DoneCard : styles.Card}>
       <textarea
@@ -23,11 +24,15 @@ const Card = ({
         readOnly={editing}
         defaultValue={description}
         onChange={(e) => handleCardInputChange(e)}
+        ref={inputRef}
       />
       {editing ? (
         <Button
           // editing={editing}
-          onClickHandler={() => handleEditCard(taskId)}
+          onClickHandler={() => [
+            handleEditCard(taskId),
+            inputRef.current.focus(),
+          ]}
           type="Edit"
         />
       ) : (
