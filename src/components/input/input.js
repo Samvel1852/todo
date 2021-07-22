@@ -1,5 +1,5 @@
 import styles from "./input.module.css";
-// import Proptypes from "prop-types";
+import { string, func, boolean, number } from "prop-types";
 
 function Input({ type, handleMainInputValue, cardValue, mainInputValue }) {
   return (
@@ -15,6 +15,7 @@ function Input({ type, handleMainInputValue, cardValue, mainInputValue }) {
 
 export default Input;
 
-// Input.proptypes = {
-//   type: Proptypes.string.isRequired,
-// };
+Input.propTypes = {
+  type: string.isRequired,
+  handleMainInputValue: func.isRequired,
+};

@@ -5,7 +5,9 @@ import Input from "../../components/input/input";
 import styles from "./todo.module.css";
 
 class Todo extends Component {
-  static id = 3;
+  static id = localStorage.getItem("state")
+    ? JSON.parse(localStorage.getItem("state")).mainList.length
+    : 0;
   state = localStorage.getItem("state")
     ? JSON.parse(localStorage.getItem("state"))
     : {
@@ -90,6 +92,7 @@ class Todo extends Component {
   };
 
   render() {
+    console.log(JSON.parse(localStorage.getItem("state")));
     return (
       <>
         <div className={styles.AddTodoDiv}>

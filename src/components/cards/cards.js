@@ -1,5 +1,5 @@
 import Card from "../card/card";
-
+import { string, func, bool, number, array } from "prop-types";
 import styles from "./cards.module.css";
 
 const Cards = ({
@@ -37,3 +37,11 @@ const Cards = ({
 };
 
 export default Cards;
+
+Cards.propTypes = {
+  tasks: array.isRequired,
+  handleEditCard: func.isRequired,
+  handleDeleteCard: func.isRequired,
+  handleCardInputChange: func.isRequired,
+  handleActiveDoneToggle: func.isRequired,
+};

@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
 import Button from "../../components/button/button";
+import { string, func, bool, number, array } from "prop-types";
 import Input from "../../components/input/input";
 import styles from "./card.module.css";
 
@@ -44,3 +45,13 @@ const Card = ({
 };
 
 export default Card;
+
+Card.propTypes = {
+  handleEditCard: func.isRequired,
+  handleDeleteCard: func.isRequired,
+  handleCardInputChange: func.isRequired,
+  handleActiveDoneToggle: func.isRequired,
+  editing: bool.isRequired,
+  taskId: number.isRequired,
+  description: string.isRequired,
+};

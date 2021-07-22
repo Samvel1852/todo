@@ -1,3 +1,4 @@
+import { string, func, bool, number, array } from "prop-types";
 import styles from "./button.module.css";
 import Icon from "../../helpers/Icon";
 
@@ -40,3 +41,8 @@ function Button({ type, onClickHandler, isHidden }) {
 }
 
 export default Button;
+
+Button.propTypes = {
+  isHidden: bool,
+  onClickHandler: func.isRequired,
+};
