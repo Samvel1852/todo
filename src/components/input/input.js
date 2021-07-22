@@ -7,6 +7,7 @@ function Input({ type, handleMainInputValue, cardValue, mainInputValue }) {
       className={styles.AddTodo}
       type={type}
       value={mainInputValue}
+      autoFocus={true}
     />
   );
 }
