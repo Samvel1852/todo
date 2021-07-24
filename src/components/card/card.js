@@ -44,6 +44,8 @@ const Card = ({
   );
 };
 
+//g
+
 export default Card;
 
 Card.propTypes = {
